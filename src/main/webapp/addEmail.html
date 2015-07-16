@@ -1,0 +1,37 @@
+<cui-wizard on-finish='addAccount(account)'>
+  <cui-wizard-step title='Introduction'>
+    <h1>Add an email to migrate</h1>
+    <p>This wizard will walk you through the steps to migrate an email. To continue, please press 'Next'.</p>
+  </cui-wizard-step>
+  <form name="emailAddress">
+    <cui-wizard-step title='Email address' invalid='emailAddress.$invalid'>
+      <h1>Email address</h1>
+      <p>Enter the account email address to migrate</p>
+      <cui-textbox ng-model="account.email" placeholder='Email address' type='email' required></cui-textbox>
+    </cui-wizard-step>
+  </form>
+  <cui-wizard-step title='What to migrate'>
+    <h1>What to migrate</h1>
+    <p>Check the items that you would like to migrate in this account.</p>
+    <cui-checkbox name='emails' ng-model="account.emails" ng-true-value='1' ng-false-value='0'>Emails</cui-checkbox>
+    <cui-checkbox name='calendars' ng-model="account.calendars" ng-true-value='1' ng-false-value='0'>Calendars</cui-checkbox>
+    <cui-checkbox name='contacts' ng-model="account.contacts" ng-true-value='1' ng-false-value='0'>Contacts</cui-checkbox>
+    <cui-checkbox name='memos' ng-model="account.memos" ng-true-value='1' ng-false-value='0'>Memos</cui-checkbox>
+  </cui-wizard-step>
+  <cui-wizard-step title='Overview'>
+    <p>The following will be added to the migration:</p>
+    <dl>
+      <dt>Account address</dt>
+      <dd>{{account.email}}</dd>
+      <dt>Emails</dt>
+      <dd check-or-x='account.emails'></dd>
+      <dt>Calendars</dt>
+      <dd>
+      <dd check-or-x='account.calendars'></dd>
+      <dt>Contacts</dt>
+      <dd check-or-x='account.contacts'></dd>
+      <dt>Memos</dt>
+      <dd check-or-x='account.memos'></dd>
+    </dl>
+  </cui-wizard-step>
+</cui-wizard>

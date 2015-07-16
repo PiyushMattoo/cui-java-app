@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app
+   xmlns="http://java.sun.com/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+   metadata-complete="true"
+   version="3.0">
+
+  <!--  metadata-complete is set to true so annotations are not processed by default -->
+
+<!--   <servlet>
+    <servlet-name>HelloWorld</servlet-name>
+    <servlet-class>org.example.HelloWorldServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>HelloWorld</servlet-name>
+    <url-pattern>/api</url-pattern>
+  </servlet-mapping> -->
+
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+      <servlet-name>Resteasy</servlet-name>
+      <servlet-class>
+          org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+      </servlet-class>
+      <init-param>
+          <param-name>javax.ws.rs.Application</param-name>
+          <param-value>org.sitraka.MigrationApplication</param-value>
+      </init-param>
+  </servlet>
+
+  <servlet-mapping>
+      <servlet-name>Resteasy</servlet-name>
+      <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+
+  <!-- Auto scan REST service -->
+  <context-param>
+    <param-name>resteasy.scan</param-name>
+    <param-value>true</param-value>
+  </context-param>
+
+  <!-- this should be the same URL pattern as the servlet-mapping property -->
+  <context-param>
+    <param-name>resteasy.servlet.mapping.prefix</param-name>
+    <param-value>/api</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>
+      org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
+      </listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>resteasy-servlet</servlet-name>
+    <servlet-class>
+      org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+    </servlet-class>
+  </servlet>
+
+
+</web-app>

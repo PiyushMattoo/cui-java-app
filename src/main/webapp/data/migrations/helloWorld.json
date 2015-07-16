@@ -1,0 +1,29 @@
+{
+  "adminCreds": {
+    "email": "test@customerTwo.com",
+    "password": "aStrongPassword"
+  },
+  "from": "Google Apps",
+  "to": "Outlook 2013",
+  "from": "beginning",
+  "to": "now",
+  "mailboxes": [{
+    "email": "test@customerTwo.com",
+    "emails": true,
+    "contacts": true,
+    "calendars": false,
+    "memos": true
+  }, {
+    "email": "test1@customerTwo.com",
+    "emails": true,
+    "contacts": false,
+    "calendars": true,
+    "memos": true
+  }, {
+    "email": "test2345@customerTwo.com",
+    "emails": true,
+    "contacts": true,
+    "calendars": true,
+    "memos": false
+  }]
+}

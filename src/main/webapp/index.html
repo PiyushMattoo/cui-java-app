@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+  <title>CUI Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <script src='cui/js/cui-vendor.min.js'></script>
+  <script src='cui/js/cui.js'></script>
+  <script src='app.js'></script>
+
+  <link rel="stylesheet" href="cui/css/cui.min.css">
+</head>
+
+<body ng-controller='AppCtrl'>
+  <div ng-controller="StartScreenCtrl" ng-if='!auth.isAuthenticated()'>
+    <cui-start-screen start-screen-settings='startScreenSettings'
+                      on-sign-in='onSignIn(userData)'>
+    </cui-start-screen>
+  </div>
+  <div ng-controller="AppFrameCtrl" ng-if='auth.isAuthenticated()'>
+    <cui-application-frame application-name='{{applicationInfo.name}}'
+                           application-subname='{{applicationInfo.version}}'
+                           navigation-items='navItems'
+                           masthead-show-controls=true>
+      <div cui-controls>
+        <cui-button ng-controller='AboutBoxCtrl' ng-click='showAboutBox()'>About</cui-button>
+        <cui-button logout>Logout</cui-button>
+      </div>
+      <div cui-content>
+        <div ng-view></div>
+      </div>
+    </cui-application-frame>
+
+  </div>
+</body>
+</html>

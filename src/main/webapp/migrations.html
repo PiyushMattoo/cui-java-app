@@ -1,0 +1,25 @@
+<h1>Migration '{{migrationData.name}}'</h1>
+<cui-button ng-click="addEmail()" cui-type='success'>
+  <cui-icon icon='envelope'></cui-icon> Add email to migrate
+</cui-button>
+
+<table ng-if='mailboxData'>
+  <thead>
+    <tr>
+      <td>Email address</td>
+      <td>Emails</td>
+      <td>Calendar</td>
+      <td>Contacts</td>
+      <td>Memos</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="mailbox in mailboxData">
+      <td>{{mailbox.email}}</td>
+      <td check-or-x='mailbox.emails'></td>
+      <td check-or-x='mailbox.calendars'></td>
+      <td check-or-x='mailbox.contacts'></td>
+      <td check-or-x='mailbox.memos'></td>
+    </tr>
+  </tbody>
+</table>

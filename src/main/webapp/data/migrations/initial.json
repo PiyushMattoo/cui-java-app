@@ -1,0 +1,59 @@
+{
+  "adminCreds": {
+    "email": "test@customerOne.com",
+    "password": "test123"
+  },
+  "from": "Onedrive",
+  "to": "Google Apps",
+  "from": "beginning",
+  "to": "now",
+  "mailboxes": [{
+    "email": "test@customerOne.com",
+    "emails": false,
+    "contacts": true,
+    "calendars": true,
+    "memos": false
+  }, {
+    "email": "test1@customerOne.com",
+    "emails": true,
+    "contacts": false,
+    "calendars": false,
+    "memos": true
+  }, {
+    "email": "test2345@customerOne.com",
+    "emails": true,
+    "contacts": false,
+    "calendars": true,
+    "memos": false
+  }, {
+    "email": "testAUser@customerOne.com",
+    "emails": false,
+    "contacts": false,
+    "calendars": false,
+    "memos": true
+  }, {
+    "email": "testing1234@customerOne.com",
+    "emails": true,
+    "contacts": true,
+    "calendars": true,
+    "memos": true
+  }, {
+    "email": "helloWorld@customerOne.com",
+    "emails": true,
+    "contacts": false,
+    "calendars": true,
+    "memos": false
+  }, {
+    "email": "anotherUser@customerOne.com",
+    "emails": true,
+    "contacts": false,
+    "calendars": true,
+    "memos": false
+  }, {
+    "email": "ceo@customerOne.com",
+    "emails": true,
+    "contacts": false,
+    "calendars": true,
+    "memos": true
+  }]
+}
